@@ -1,4 +1,4 @@
-# Preparation for Finite Element Method (FEM): FEniCS + Jupyter Notebook Setup Guide
+# Preparation for Finite Element Method (FEM): FEniCS + Jupyter Notebook Setup Guide + Other necessary packages
 
 This guide shows how to properly install **FEniCS** (the classic `dolfin` version) in a Conda environment and use it inside **Jupyter Notebook**.
 
@@ -42,7 +42,33 @@ This installs:
 conda activate fenics-env
 ```
 
-### 3. Launch Jupyter Notebook
+### 3. Install necessary packages
+
+```bash
+# Activate your Conda environment (replace with your actual environment name, e.g., fenics-env)
+conda activate fenics-env
+
+# Install core scientific computing and visualization libraries
+# Even though packages like numpy or matplotlib are common, they are NOT automatically included 
+# in a fresh Conda environment and must be explicitly installed to avoid ModuleNotFoundError.
+conda install -c conda-forge numpy scipy matplotlib
+
+# Install mesh handling tools
+# - meshio: reads/writes various mesh formats (e.g., .msh, .xdmf); essential for data exchange between Gmsh and FEniCS
+# - gmsh: open-source mesh generator for complex geometries and high-quality finite element meshes
+conda install - c conda-forge meshio gmsh
+
+# Install image processing library
+# - pillow (PIL): the modern replacement for Python Imaging Library; used to generate, edit, and save images, including GIF animations
+conda install -c conda-forge pillow
+```
+
+> **Why install numpy/matplotlib again?**  
+> Although FEniCS may pull in some dependencies indirectly, the versions might be incomplete or incompatible. Explicit installation ensures stability and prevents runtime errors.
+
+> **Use `conda-forge` consistently**: Mixing `pip` and `conda` for scientific packages often leads to ABI conflicts. Sticking to `conda-forge` guarantees binary compatibility across all libraries.
+
+### 4. Launch Jupyter Notebook
 
 Depending on your setup, launch Jupyter Notebook as follows:
 

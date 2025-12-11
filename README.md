@@ -97,19 +97,6 @@ print("Success! FEniCS is ready to use.")
 
 If no error appears, you're all set!
 
-## Using an Existing Conda Environment?
-
-Already have a Conda environment? Add FEniCS like this:
-
-```bash
-conda activate your-env-name
-conda install -c conda-forge fenics
-conda install ipykernel              # Ensure Jupyter can use this env
-python -m ipykernel install --user --name=your-env-name --display-name="Python (FEniCS)"
-```
-
-Then select **“Python (FEniCS)”** as the kernel in Jupyter Notebook.
-
 ## Common Mistakes to Avoid
 
 | What **not** to do | What to do instead |
@@ -126,4 +113,4 @@ Then select **“Python (FEniCS)”** as the kernel in Jupyter Notebook.
 
 ---
 
-> **Tip**: For new projects, consider [FEniCSx](https://fenicsproject.org/news/2022-09-28-fenicsx-0.4.0/) (`dolfinx`), the next-generation version. Replace `fenics` with `fenicsx` in the commands above.
+>  **Tip**: For new projects, consider [FEniCSx](https://fenicsproject.org/news/2022-09-28-fenicsx-0.4.0/) (`dolfinx`), the next-generation version—just replace `fenics` with `fenicsx` in the installation commands. However, this project uses the classic **FEniCS** (`dolfin`) throughout.

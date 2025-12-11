@@ -1,4 +1,4 @@
-# FEniCS + Jupyter Notebook Setup Guide
+# Preparation for Finite Element Method (FEM): FEniCS + Jupyter Notebook Setup Guide
 
 This guide shows how to properly install **FEniCS** (the classic `dolfin` version) in a Conda environment and use it inside **Jupyter Notebook**.
 

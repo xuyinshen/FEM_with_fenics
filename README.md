@@ -19,6 +19,8 @@ Please run the following installation commands in the appropriate terminal for y
 
 > **Why?** FEniCS must be installed in the same Python environment that Jupyter Notebook/Lab uses. Using the correct terminal ensures you’re operating in the right Conda or system context.
 
+---
+
 ### 1. Create a dedicated Conda environment
 
 ```bash
@@ -80,6 +82,8 @@ jupyter notebook --no-browser --port=8888
   WSL 2 automatically forwards `localhost:8888` to Windows, so `http://localhost:8888` just works!
 
 > **Tip**: You can also use `jupyter lab` instead of `jupyter notebook` if you prefer JupyterLab.
+
+---
 
 ## Verify Installation
 

@@ -4,16 +4,12 @@ This guide shows how to properly install **FEniCS** (the classic `dolfin` versio
 
 > **Important**: Do **not** use `pip install fenics`—it often fails on Linux/WSL because FEniCS requires compiled C++ dependencies. Always use **Conda from the `conda-forge` channel**.
 
----
-
 ## Prerequisites
 
 - [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or Anaconda installed
 - Terminal access (Linux, macOS, Anaconda prompt, or WSL on Windows)
 
 ## Installation Steps
-
----
 
 Please run the following installation commands in the appropriate terminal for your setup:
 
@@ -22,8 +18,6 @@ Please run the following installation commands in the appropriate terminal for y
 - **Native Linux terminal** — if you are working directly on a Linux system (e.g., Ubuntu, Debian, etc.).
 
 > **Why?** FEniCS must be installed in the same Python environment that Jupyter Notebook/Lab uses. Using the correct terminal ensures you’re operating in the right Conda or system context.
-
----
 
 ### 1. Create a dedicated Conda environment
 
@@ -45,9 +39,6 @@ conda activate fenics-env
 ### 3. Install necessary packages
 
 ```bash
-# Activate your Conda environment (replace with your actual environment name, e.g., fenics-env)
-conda activate fenics-env
-
 # Install core scientific computing and visualization libraries
 # Even though packages like numpy or matplotlib are common, they are NOT automatically included 
 # in a fresh Conda environment and must be explicitly installed to avoid ModuleNotFoundError.
@@ -90,8 +81,6 @@ jupyter notebook --no-browser --port=8888
 
 > **Tip**: You can also use `jupyter lab` instead of `jupyter notebook` if you prefer JupyterLab.
 
----
-
 ## Verify Installation
 
 In a new notebook cell, run:
@@ -103,8 +92,6 @@ print("Success! FEniCS is ready to use.")
 ```
 
 If no error appears, you're all set!
-
----
 
 ## Using an Existing Conda Environment?
 
@@ -119,8 +106,6 @@ python -m ipykernel install --user --name=your-env-name --display-name="Python (
 
 Then select **“Python (FEniCS)”** as the kernel in Jupyter Notebook.
 
----
-
 ## Common Mistakes to Avoid
 
 | What **not** to do | What to do instead |
@@ -128,8 +113,6 @@ Then select **“Python (FEniCS)”** as the kernel in Jupyter Notebook.
 | `pip install fenics` in terminal or notebook | Use `conda install -c conda-forge fenics` |
 | Installing FEniCS in the base Conda environment | Use a **dedicated environment** for reproducibility |
 | Mixing `pip` and `conda` for scientific packages | Prefer `conda` for FEniCS, NumPy, SciPy, etc. |
-
----
 
 ## Resources
 

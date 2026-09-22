@@ -1,0 +1,36 @@
+# config.yaml
+geometry:
+  D: 0.1                # 圆柱直径
+  L_factor: 21.0        # 流域长度倍数 (L = L_factor * D)
+  H_factor: 14.0        # 流域高度倍数
+  W_factor: 4.0         # 展向宽度倍数
+  xc_factor: 5.0        # 圆柱中心 x 位置倍数
+  yc_factor: 7.0        # 圆柱中心 y 位置倍数
+  rc_factor: 0.5        # 圆柱半径倍数 (rc = rc_factor * D)
+
+mesh:
+  coarse: 0.05          # 远场网格尺寸
+  fine: 0.02            # 圆柱附近精细网格
+  R_inner: 0.3          # 加密区内半径
+  R_outer: 0.6          # 加密区外半径
+
+physics:
+  nu: 1.0e-05           # 运动粘度
+  v0: 1.0               # 入口速度
+  T: 0.1                # 总模拟时间
+  dt_auto: true         # 是否自动计算 dt (true: dt=0.5*hmin, false: 使用 dt_value)
+  dt_value: 0.005       # 手动指定时间步长（仅当 dt_auto=false 时生效）
+  theta: 0.5            # Crank-Nicolson 参数
+
+solver:
+  max_nonlinear_iter: 5 # 非线性最大迭代次数
+  tol_nonlinear: 1.0e-05# 非线性收敛容差
+  solver_u: "bicgstab"  # 速度求解器
+  precond_u: "default"  # 速度预条件
+  solver_p: "bicgstab"  # 压力求解器
+  precond_p: "default"  # 压力预条件
+
+output:
+  base_dir: "/mnt/d/paraview_data"
+  parent_folder: "Data_NS_3D"
+  save_freq: 5          # XDMF 保存频率（步）
